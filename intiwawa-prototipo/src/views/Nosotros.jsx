@@ -123,9 +123,9 @@ export default function Nosotros({ navigateTo }) {
             </div>
             <div className="lg:col-span-5">
               <img
-                src="https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=800&q=80"
-                alt="Campiña y comunidad de Mollebaya Arequipa"
-                className="rounded-2xl shadow-lg w-full h-72 object-cover border-2 border-white"
+                src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80"
+                alt="Comunidad y niños de Mollebaya en actividades de aprendizaje"
+                className="rounded-2xl shadow-lg w-full h-72 sm:h-80 object-cover border-2 border-white"
               />
             </div>
           </div>

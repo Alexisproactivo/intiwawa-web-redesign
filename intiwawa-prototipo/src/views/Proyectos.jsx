@@ -78,7 +78,7 @@ export default function Proyectos({ navigateTo }) {
         'Educación ambiental y respeto por la Madre Tierra (Pachamama)',
         'Técnicas de riego por goteo para ahorro de agua'
       ],
-      img: 'https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=800&q=80',
+      img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80',
     },
     {
       id: 5,

@@ -271,22 +271,44 @@ export default function Partners() {
           </p>
         </div>
 
-        {/* Grid de 18 aliados con logos uniformes h-12 max-w-[100px] grayscale hover:grayscale-0 */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 items-center justify-items-center">
-          {partners.map((partner) => (
-            <div
-              key={partner.id}
-              className="w-full flex flex-col items-center justify-center p-3 rounded-2xl bg-white border border-slate-200/90 hover:border-amber-300 hover:shadow-md transition-all duration-300 group cursor-pointer"
-              title={`${partner.name} - ${partner.category}`}
-            >
-              <div className="flex items-center justify-center w-full">
-                {partner.svg}
+        {/* Carrusel dinámico continuo tipo marquesina con animación infinita suave */}
+        <div className="relative w-full overflow-hidden py-4">
+          <style>{`
+            @keyframes marquee {
+              0% { transform: translateX(0%); }
+              100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+              display: flex;
+              width: max-content;
+              animation: marquee 35s linear infinite;
+            }
+            .animate-marquee:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
+
+          {/* Gradientes laterales para desvanecimiento suave */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-50/90 to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-50/90 to-transparent z-10" />
+
+          {/* Track infinito continuo */}
+          <div className="flex animate-marquee gap-5 items-center">
+            {[...partners, ...partners].map((partner, index) => (
+              <div
+                key={`${partner.id}-${index}`}
+                className="shrink-0 flex flex-col items-center justify-center p-3.5 w-44 rounded-2xl bg-white border border-slate-200/90 hover:border-amber-400 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+                title={`${partner.name} - ${partner.category}`}
+              >
+                <div className="flex items-center justify-center w-full">
+                  {partner.svg}
+                </div>
+                <span className="text-[11px] font-semibold text-slate-500 group-hover:text-slate-900 text-center mt-1.5 truncate max-w-[130px] transition-colors">
+                  {partner.name}
+                </span>
               </div>
-              <span className="text-[11px] font-semibold text-slate-500 group-hover:text-slate-900 text-center mt-1.5 truncate max-w-[110px] transition-colors">
-                {partner.name}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

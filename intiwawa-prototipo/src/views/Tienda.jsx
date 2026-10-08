@@ -116,7 +116,7 @@ export default function Tienda() {
       ],
       desc: 'Elaboradas con hilos de algodón mercerizado en técnicas de macramé y nudo andino por el taller de madres emprendedoras.',
       impact: 'Apoya el ingreso económico directo y autónomo de las familias locales.',
-      image: 'https://images.unsplash.com/photo-1611591475878-b19b67104b2b?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80',
     },
     {
       id: 4,
@@ -617,6 +617,26 @@ export default function Tienda() {
           </div>
         </div>
       </div>
+
+      {/* Botón flotante exclusivo de WhatsApp en Tienda */}
+      <a
+        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+          '¡Hola Intiwawa! Deseo consultar sobre el catálogo y hacer un pedido de la Tienda Solidaria.'
+        )}`}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 sm:p-4 rounded-full shadow-2xl shadow-emerald-950/40 flex items-center gap-3 group transition-all duration-300 hover:scale-105 hover:pr-5 border-2 border-white cursor-pointer"
+        aria-label="Atención y compras por WhatsApp"
+      >
+        <div className="relative flex items-center justify-center">
+          <MessageCircle className="w-7 h-7 fill-white text-[#25D366]" />
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full animate-ping"></span>
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full"></span>
+        </div>
+        <span className="font-bold text-sm max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300">
+          Atención Tienda WhatsApp
+        </span>
+      </a>
     </div>
   )
 }
