@@ -1,5 +1,4 @@
 [build]
-  base = "intiwawa-prototipo"
   publish = "dist"
   command = "npm run build"
 
